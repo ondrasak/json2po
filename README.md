@@ -37,46 +37,61 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.format
 Type: `String`
-Default value: `',  '`
+Values: `'module' | 'json'`
+Default value: `'module'`
 
-A string value that is used to do something with whatever.
+Format of source file
 
-#### options.punctuation
+#### options.original
 Type: `String`
-Default value: `'.'`
+Default value: `'en'`
 
-A string value that is used to do something else with whatever else.
+Original language
+
+#### options.path
+Type: `String`
+Default value: `'LC_MESSAGES'`
+
+Optional path within locale directory
+
+#### options.filename
+Type: `String`
+Default value: `'messages.po'`
+
+Filename of result file
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+In this example, the default options are used to convert JS module to PO file.
 
 ```js
 grunt.initConfig({
   json2po: {
     options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'path/to/result/locales': ['src/testing.js'],
     },
   },
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+In this example, source is in JSON format. Result will be saved in `path-example/[en | ru | es]/LCCC/locale.po`
 
 ```js
 grunt.initConfig({
   json2po: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      format: 'json',
+      original: 'ru',
+      path: 'LCCC',
+      filename: 'locale.po'
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'path-example': ['src/testing.json'],
     },
   },
 });
