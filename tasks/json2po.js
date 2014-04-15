@@ -59,8 +59,8 @@ module.exports = function ( grunt ) {
 					for ( var id in messages ) {
 						var message = messages[ id ];
 
-						poString += '\n\nmsgid "' + id  + '"' + // reference
-							'\nmsgstr "' + message + '"'; // translation
+						poString += '\n\nmsgid "' + ( id )  + '"' + // reference
+							'\nmsgstr "' + escape( message ) + '"'; // translation
 					}
 
 					// Save to file
@@ -70,5 +70,9 @@ module.exports = function ( grunt ) {
 				}
 			}
 		});
+
+		function escape(s) {
+			return s.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n');
+		}
 	});
 };
