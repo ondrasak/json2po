@@ -59,9 +59,8 @@ module.exports = function ( grunt ) {
 					for ( var id in messages ) {
 						var message = messages[ id ];
 
-						poString += '\n\n#: ' + id + // reference
-							'\nmsgid "' + langs[ options.original ][ id ]  + '"' + // original
-							'\nmsgstr "' + ( langName === options.original ? "" : message ) + '"'; // translation
+						poString += '\n\nmsgid "' + id  + '"' + // reference
+							'\nmsgstr "' + message + '"'; // translation
 					}
 
 					// Save to file

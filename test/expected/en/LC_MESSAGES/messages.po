@@ -1,0 +1,13 @@
+#
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "string-1"
+msgstr "My App — the first mobile-only email account."
+
+msgid "string-2"
+msgstr "One app to manage allyour&nbsp;email accounts"
+
+msgid "string-3"
+msgstr "and nearly every"

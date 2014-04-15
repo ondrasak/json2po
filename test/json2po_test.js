@@ -31,7 +31,7 @@ exports.json2po = {
 	moduleFormatOriginal: function ( test ) {
 		test.expect( 1 );
 		var actual = grunt.file.read( 'tmp/module/en/LC_MESSAGES/messages.po' );
-		var expected = grunt.file.read( 'test/expected/module/en/LC_MESSAGES/messages.po' );
+		var expected = grunt.file.read( 'test/expected/en/LC_MESSAGES/messages.po' );
 		test.equal( actual, expected, 'Module format. Generated original (English) PO match expected' );
 		test.done();
 	},
@@ -39,7 +39,7 @@ exports.json2po = {
 	moduleFormatTranslated: function( test ) {
 		test.expect( 1 );
 		var actual = grunt.file.read( 'tmp/module/ru/LC_MESSAGES/messages.po' );
-		var expected = grunt.file.read( 'test/expected/module/ru/LC_MESSAGES/messages.po' );
+		var expected = grunt.file.read( 'test/expected/ru/LC_MESSAGES/messages.po' );
 		test.equal( actual, expected, 'Module format. Generated translated (Russian) PO match expected' );
 		test.done();
 	},
@@ -47,7 +47,7 @@ exports.json2po = {
 	jsonFormatOriginal: function ( test ) {
 		test.expect( 1 );
 		var actual = grunt.file.read( 'tmp/json/en/LC_MESSAGES/messages.po' );
-		var expected = grunt.file.read( 'test/expected/module/en/LC_MESSAGES/messages.po' );
+		var expected = grunt.file.read( 'test/expected/en/LC_MESSAGES/messages.po' );
 		test.equal( actual, expected, 'JSON format. Generated original (English) PO match expected' );
 		test.done();
 	},
@@ -55,7 +55,7 @@ exports.json2po = {
 	jsonFormatTranslated: function( test ) {
 		test.expect( 1 );
 		var actual = grunt.file.read( 'tmp/json/ru/LC_MESSAGES/messages.po' );
-		var expected = grunt.file.read( 'test/expected/module/ru/LC_MESSAGES/messages.po' );
+		var expected = grunt.file.read( 'test/expected/ru/LC_MESSAGES/messages.po' );
 		test.equal( actual, expected, 'JSON format. Generated translated (Russian) PO match expected' );
 		test.done();
 	},
