@@ -53,14 +53,15 @@ module.exports = function ( grunt ) {
 				}
 
 				for ( var langName in langs ) {
-					var translations = langs[ langName ],
-						poString = '"Content-Type: text/plain; charset=UTF-8"';
+					var messages = langs[ langName ],
+						poString = '#\nmsgid ""\nmsgstr ""\n"Content-Type: text/plain; charset=UTF-8\\n"';
 
-					for ( var id in translations ) {
-						var string = translations[ id ];
+					for ( var id in messages ) {
+						var message = messages[ id ];
 
-						poString += '\n\nmsgid "' + langs[ options.original ][ id ]  + '"\n' +
-						'msgstr "' + ( langName === options.original ? "" : string ) + '"';
+						poString += '\n\n#: ' + id + // reference
+							'\nmsgid "' + langs[ options.original ][ id ]  + '"' + // original
+							'\nmsgstr "' + ( langName === options.original ? "" : message ) + '"'; // translation
 					}
 
 					// Save to file
